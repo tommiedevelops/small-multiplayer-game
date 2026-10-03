@@ -50,7 +50,7 @@ fn map(p: vec3<f32>) -> vec4<f32>
 {
     let t : f32 = uniforms.time; 
     let col1 = vec3(1,0.2,0.3);
-    let col2 = vec3(0.0,1.0,0.1);
+    let col2 = vec3(0.0,1.0 ,0.1);
 
     let s = sdSphere(p, vec3(cos(t),sin(t),cos(t)), 1.0, col1);
 
@@ -80,6 +80,11 @@ struct Uniforms {
     _padding: f32,
 }
 
+struct CameraUniforms {
+    worldPosition: vec3<f32>, // 12 bytes + 4 bytes padding
+    worldRotation: vec3<f32>  // 12 bytes + 4 bytes padding
+}
+
 @group(0) @binding(0) var<uniform> uniforms: Uniforms;
 
 fn calcNormal(p: vec3<f32>) -> vec3<f32> {
@@ -102,13 +107,13 @@ fn fs_main(@builtin(position) fragCoord: vec4<f32>) -> @location(0) vec4<f32> {
 
     // Initialization
     let uv : vec2<f32> = (fragCoord.xy * 2.0 - uniforms.resolution) / uniforms.resolution.y;
-    let ro : vec3<f32> = vec3(0,0,-4); // ray origin
-    let rd : vec3<f32> = normalize(vec3(uv, 1));  // ray direction
+    let ro : vec3<f32> = vec3(0,0,-4); // ray origin (read form uniform)
+    let rd : vec3<f32> = normalize(vec3(uv, 1));  // ray direction (read from uniform)
     var col : vec3<f32>; // final pixel color
 
     var t : f32 = 0; // total distance travelled
 
-    // Raymarching
+    // Raymarching ( Each pixel has a corresponding ray )
     for(var i = 0; i < 80; i++) {
         let p : vec3<f32> = ro + rd * t; // position along ray
         let d : vec4<f32> = map(p); // current distance to the scene

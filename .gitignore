@@ -1,2 +1,35 @@
 build/
 node_modules/
+node_modules
+build
+.colyseus-cloud.json
+.devmode.json
+
+# dependencies
+node_modules/
+
+# build output
+build/
+dist/
+*.tsbuildinfo
+
+# env — secrets
+.env
+.env.local
+.env.*.local
+.env.production
+*.env*
+
+# logs
+*.log
+npm-debug.log*
+.npm/
+
+# os
+.DS_Store
+Thumbs.db
+
+# vscode — keep shared settings, ignore personal
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json

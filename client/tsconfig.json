@@ -5,7 +5,9 @@
         "moduleResolution": "bundler",
         "strict": true,
         "skipLibCheck": true,
-        "types": ["@webgpu/types"]
+        "types": ["@webgpu/types"],
+        "experimentalDecorators": true,
+        "useDefineForClassFields": false
     },
     "include": ["src"]
 }
