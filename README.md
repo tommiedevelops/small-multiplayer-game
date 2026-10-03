@@ -7,6 +7,8 @@ lobbies and chat over the internet.
 Not much to see yet but here's the [demo](https://tommiedevelops.github.io/tcp-multiplayer-server/) 
 if you're interested.
 
+Commenting for build
+
 ## Architecture
 <div align="center">
 <img src="docs/tcp-server-diagram.svg">
