@@ -1,0 +1,4 @@
+## Pitch
+A co-op browser game where the goal is to stack stones as high as possible. Each round, each player is given a molten "stone". They then morph together to try to create an optimal shape to place on the tower next. Each round there are two phases: build & place. 
+
+In the build phase, players are given a random "molten" stone. During this time, each player controls an orbit camera as well as their own sdf shape. There will also be a 'seed' shape in the middle so any sdf not touching the seed will be disqualified. Then, in a certain time, they have to work together to create a shape that can be placed on the tower without causing it to fall. Players can must 'lock in' their decision before other players can build on top of their stone. Goal is to get as high as possible without the tower falling.
