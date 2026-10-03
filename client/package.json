@@ -8,6 +8,7 @@
     "vite": "^8.0.16"
   },
   "dependencies": {
+    "@colyseus/sdk": "^0.18.5",
     "@loaders.gl/core": "^4.4.2",
     "@loaders.gl/gltf": "^4.4.2",
     "wgpu-matrix": "^3.4.2"
